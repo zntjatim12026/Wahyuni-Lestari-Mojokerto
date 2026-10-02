@@ -10,7 +10,7 @@ var map = new ol.Map({
         
         projection: new ol.proj.Projection({
             code: 'EPSG:32748',
-            //extent: [1310727.497517, 9137342.365464, 1348105.390018, 9186098.900675],
+            //extent: [1310727.497517, 9137342.365464, 1348105.390018, 9185932.108563],
             units: 'm'
         })
     })
@@ -79,6 +79,7 @@ if (hasTouchScreen) {
       return _orig(pixel, callback);
     }
   };
+})(map, HIT);
 
 ////controls container
 
@@ -389,6 +390,7 @@ function onPointerMove(evt) {
         }
     }
 };
+
 
 map.on('pointermove', onPointerMove);
 
@@ -1360,7 +1362,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bottomRightContainerDiv.appendChild(attributionControl);
     }
 
-       /* === MATIKAN LAYER DATA SEBELUM DIKLIK DI LEGENDA (kecuali basemap) === */
+           /* === MATIKAN LAYER DATA SEBELUM DIKLIK DI LEGENDA (kecuali basemap) === */
 (function turnOffLayersForMobile() {
   // deteksi & matikan semua layer non-basemap di layersList
   function offIfNotBase(layer) {
